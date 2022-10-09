@@ -1,0 +1,46 @@
+ <!-- show blog picked by user-->
+<div class="text-left">
+    <h2>{{title}}</h2>    
+    <p>{{content}}</p>
+    <p>Created by {{user.name}} on {{format_date date_created}}</p> 
+    <p id ="blogID">{{{id}}}</p>     
+  </div>
+
+ <!-- show comments for this blog-->
+ {{#if comments.length}}
+  <div class="text-left" id="comment-list">
+
+    <h4>Comments received:</h4>
+
+    {{#each comments as |comment|}}
+      <div>
+        <p>Comment as: {{comment.comment_text}}</p>  
+
+      </div>     
+      
+    {{/each}}
+  </div>
+ {{/if}}
+
+   <!-- create new comment as follows-->
+  <div class="row text-left" >
+    <div class="col-md-8">
+      <h4>Create Comment to this blog:</h3>
+
+      <form class="form new-comment-form">    
+      
+        <div class="form-group">
+          <label for="comment-text">Comment Text:</label>
+          <textarea class="form-input" id="comment-text" name="comment-text"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Add Comment</button>
+        </div>
+      </form>
+      <p id="cmt_created"></p>
+    </div>
+  </div>
+
+
+  <!--  blogComment.js to make post request to Comment -->
+  <script src="../js/blogComment.js"></script>

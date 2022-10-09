@@ -1,0 +1,18 @@
+[
+    {
+      "comment_text": "Interesting post!",
+      "blog_id": 1    
+    },
+    {
+        "comment_text": "I've never thought about this alternatives",
+        "blog_id": 2    
+    },
+    {
+        "comment_text": "Keeping going with it",
+        "blog_id": 3     
+    },
+    {
+      "comment_text": "Okay, you're hired",
+      "blog_id": 4     
+  }
+  ]

@@ -1,0 +1,30 @@
+<!-- Loop over each object in the projects array -->
+{{#each blogs as |blog| }}
+<div class="row mb-4 project">
+  <div class="col-md-4">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="/blog/{{blog.id}}">{{blog.title}}</a>
+    </h2>
+     <!-- Pass date_crate value to the helper function -->
+  
+    <p>Created by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+  </div>
+  <div class="col-md-8">
+    <p>
+      {{blog.content}}
+    </p>
+    <br></br>    
+      {{#each blog.comments as |comment| }}
+      <p>
+         Comment : {{comment.comment_text}}
+         <br></br>        
+      </p>
+      {{/each}}
+
+  </div>
+</div>
+{{/each}}
+
+
