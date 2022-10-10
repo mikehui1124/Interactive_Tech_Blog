@@ -59,7 +59,33 @@ router.get('/blog/:id', withAuth, async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route without a user login
+// update a blog route
+router.put('/blog/:id', (req, res) => {
+  //Calls the update method 
+  Blog.update(
+    {
+      // All the fields you can update and the data attached to the request body.
+      title: req.body.title,
+      content: req.body.content    
+    },
+    {
+      // Gets a blog based on the blog_id given in the request parameter
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((updatedBlog) => {
+      res.json(updatedBlog);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json(err);
+    });
+});
+
+
+// Get the associated blog records as per logged_in user_id
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -70,6 +96,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
+    console.log(user);
 
     // pass user details and session flag into profile.hdbs template  
     res.render('dashboard', {

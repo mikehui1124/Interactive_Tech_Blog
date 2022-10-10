@@ -20,7 +20,9 @@
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
+        <button type="button" id= "update_btn" class="btn btn-primary">Update</button>
       </div>
+      <p id="blog_updated"></p>
     </form>
   </div>
 
@@ -28,11 +30,13 @@
   {{#if blogs.length}}
   <div class="col-md-5 blog-list">
     <h3>Your Blogs:</h3>
+    <h4>Click a blog to update content</h4>
 
     {{#each blogs as |blog|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/">{{blog.title}}</a></h4>
+        {{!-- <h4><a href="/">{{blog.title}}</a></h4> --}}
+        <button class="blog_btn btn btn-light" data-id2="{{blog.id}}">{{blog.title}}</button>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
