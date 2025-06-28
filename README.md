@@ -11,7 +11,7 @@ The app will be using MySQL and Sequelize of NPM as dependency. The app will be 
 
 The completed JavaScript source-code, table models, api routes and package log (ie package.json file) are available in the following GitHub repo as Main branch,
 
-  https://github.com/mikehui1124/challenge_14_interactive_tech_blog
+  https://github.com/mikehui1124/Interactive_Tech_Blog
   
 The deployed URL on Heroku host is as follows.
 
