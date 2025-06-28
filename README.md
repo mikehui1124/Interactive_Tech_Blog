@@ -1,4 +1,4 @@
-# challenge_14_interactive_tech_blog
+Interactive Tech Blog
 backend + frontend CRUD app
 
 This is a JavaScript source-code for building both the back end components and the front-end views of a interactive Tech Blog. 
