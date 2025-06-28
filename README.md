@@ -23,7 +23,7 @@ The tech blog provides CRUD services for users to display, add, update and delet
 There functionality requires users to be logged in/ signup at first, and if not, prompt user to open login/signup view to do so.
 The application has a database with 3 tables of records, namely
 
--	Blog,  -User and -Comment
+-	Blog,  User and Comment
 
 The back-end will setup these 3 models and their dependency using Sequalize as ORM interface, and then support CRUD functionality to access the DB. One-to-many relationship between Blog, User and Comments models will be established using Sequalize.
 
